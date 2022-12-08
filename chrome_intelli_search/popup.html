@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="popup.css" rel="stylesheet">
+  <title>CS410 Page Indexer</title>
+</head>
+<body>
+<!--  Add a div that will contain the search bar and options -->
+<div id="searchBarContainer">
+  <!--    We should use a search bar element-->
+  <div class="search-box">
+    <button class="btn-search"><i class="fancy-search-box-button"></i></button>
+    <label class="search-box label-text" for="search-box-input">Search Box</label>
+    <input class="input-search" id="search-box-input" placeholder="Type to Search..." type="text">
+  </div>
+</div>
+<div id="searchOptionsContainer">
+  <!--    1 div per option. These will have the text description on the left, and then an input field on the right-->
+  <div class="searchOption">
+    <p class="label-text">Document is defined as:</p>
+    <!--    dropdown menu with the options "sentence", "paragraph", "page (pdf mode only)" -->
+    <label for="documentTypeDropdown"></label>
+    <select id="documentTypeDropdown">
+      <option value="sentence">Sentence</option>
+      <option value="paragraph">Paragraph</option>
+      <option value="page">Page (pdf mode only)</option>
+    </select>
+  </div>
+  <div class="searchOption">
+    <p class="label-text">Retrieval function to use:</p>
+    <!--    dropdown menu with the options "BM25", "other"-->
+    <label for="retrievalFunctionDropdown"></label>
+    <select id="retrievalFunctionDropdown">
+      <option value="BM25">BM25</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="button-search">
+    <button class="buttonload" id="search">Search</button>
+  </div>
+</div>
+<div class="search-results-container" id="searchResultsContainer">
+  <ol id="search-results">
+  </ol
+</div>
+ <script src="backend.js"></script>
+</body>
+</html>

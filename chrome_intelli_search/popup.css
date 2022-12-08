@@ -1,0 +1,169 @@
+/*set all margins to 0*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*set the body width and height to be 1/5 of the view width*/
+body {
+    width: 750px;
+    height: 550px;
+    /*    we want this to be a flex container with direction vertical */
+    display: flex;
+    flex-direction: column;
+    /*    we want the items to be centered */
+    align-items: center;
+    /* We want a small gap between the items */
+    gap: 10px;
+    /*    We also want a small space around the elements*/
+    padding: 10px;
+    background-color: #e1e0ed;
+}
+
+
+/* Below is Fancy search-bar css that I stole from online*/
+/* source: https://codepen.io/ahmadbassamemran/pen/rNjMXqg*/
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.label-text {
+    font-size: 20px;
+}
+
+.input-search {
+    height: 30px;
+    width: 50px;
+    border-style: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #22a6b3;
+    padding: 10px 40px 10px 10px;
+    color: rgb(12, 12, 12);
+}
+
+.input-search::placeholder {
+    color: rgba(255, 255, 255, .5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:focus ~ .input-search {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.input-search:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+/* Above is Fancy search-bar css that I stole from online*/
+/* source: https://codepen.io/ahmadbassamemran/pen/rNjMXqg*/
+
+/*SerachOptionsContainer should be a flex box with vertical elements*/
+#searchOptionsContainer {
+    display: flex;
+    flex-direction: column;
+    /*    we want the items to be centered */
+    align-items: center;
+    /* We want a small gap between the items */
+    gap: 10px;
+    /*    We also want a small space around the elements*/
+    padding: 10px;
+    background-color: #dcdbea;
+}
+
+.searchOption {
+    /*    this should be a flex box with direction horizontal*/
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.buttonload {
+  background-color: #04AA6D; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  font-size: 16px; /* Set a font-size */
+}
+
+/* Add a right margin to each icon */
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+
+
+ol {
+	padding: 0;
+	margin: 0;
+	max-width: 700px;
+	position: relative;
+}
+
+ol::before {
+	content: '';
+	width: 0.5rem;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 8%;
+	background: peachpuff;
+	z-index: -1;
+}
+
+li {
+	padding: 0.5rem 1.5rem 1rem;
+	border-radius: 1.5rem;
+	background: peachpuff;
+}
+
+li + li {
+	margin-top: 1rem;
+}
+
+::marker {
+	font-weight: 600;
+	color: tomato;
+	font-size: 1.8rem;
+}
+
+.search-results-container {
+    font-family: 'Roboto Slab', serif;
+	font-size: 1.2rem;
+}
+
+
+
+
+
