@@ -1,12 +1,18 @@
+//Get all the UI objects for manipulation
 let searchButton = document.getElementById("search");
 let inputSearch = document.getElementById("search-box-input");
 let resultsContainer = document.getElementById("searchResultsContainer");
 let ranker = document.getElementById("documentTypeDropdown");
 let resultsList = document.getElementById("search-results");
 
+//Add Click event listener for the search button
 searchButton.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
+  //Utilizing chrome extension scripting library execute script to send the page text and search string
+  //to backend api for searchinging
+  //The executeScript executes the searchText function in the current active tabs context and scrapes the text of the HTML document
+  //On success calls the fetch data to retrieve the ranked results.
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
     func: searchText,
@@ -15,6 +21,7 @@ searchButton.addEventListener("click", async () => {
     fetchData(response[0].result, inputSearch.value, ranker.value).then((data) => {
         searchButton.innerText = 'Search';
         resultsList.innerHTML = '';
+        //Construct results list
         for(const item of data.search_results) {
             resultsList.innerHTML += "<li>" + item + "</li>";
         }
@@ -22,6 +29,8 @@ searchButton.addEventListener("click", async () => {
   });
 });
 
+//Function to fetchData from the backend
+//Currently the server runs on the local machine
 async function fetchData(corpus, search, ranker) {
     searchButton.innerHTML = '<i class="fa fa-refresh fa-spin"></i>Searching...';
     const url = "http://127.0.0.1:5000/search";
@@ -49,7 +58,7 @@ async function fetchData(corpus, search, ranker) {
 }
 
 // The body of this function will be executed as a content script inside the
-// current page
+// current page to extract the current tabs to text to search
 function searchText() {
   return document.body.innerText;
 }
