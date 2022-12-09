@@ -24,11 +24,25 @@ def after_request(response):
   response.headers.add('Access-Control-Allow-Credentials', 'true')
   return response
 
+'''
+API for search queries
+Expects the HTML text{corpus}, search string {search} and ranking method {ranker}
+ Returns list of top-5 results according to the selected ranker
+ Text Cleaning:
+   1. Split lines
+   2. Get rid of lines with one word or less
+   3. create data set each sentence in a line
+   4. Write to dataset file from the configuration file
+   5. Run the text search algorithm
+   6. Return search results
+   This is setup for single-user mode using filesystem to store the corpus
+'''
 @app.route('/search', methods=['POST'])
 def parameters():
     
-    #clean_dirs('./datas')
+    #purge old index
     clean_dirs('./idx')
+
     request_data = json.loads(request.data)
     corpus = request_data['corpus']
     search_string = request_data['search']
@@ -52,7 +66,9 @@ def parameters():
     print('RECV search_string : {}'.format(search_string))
     print('RECV ranker : {}'.format(ranker))
 
-    results = search(search_string, original_doc, ranker)
+    results = []
+    if len(original_doc) > 0:
+        results = search(search_string, original_doc, ranker)
 
     if len(results) == 0 :
         results = ["No Results!"]
@@ -61,17 +77,36 @@ def parameters():
 
     return response
 
+
+'''
+Helper functions to remove dirs
+'''
 def clean_dirs(dir_path):
     try:
         shutil.rmtree(dir_path)
     except OSError as e:
         print("Error: %s : %s" % (dir_path, e.strerror))
 
+'''
+Core ranking function
+Uses metapy library to create inverted index via config.toml file
+1. Preprocessing
+    a. icu-tokenizer
+    b. lowercase
+    c. porter2-filter
+    d. ngram-word 1
+
+2. Create inverted index 
+3. Instantiate BM25 ranker
+3. create the query document
+4. Run the ranker for the query and idx
+5. Return top-5 hits
+'''
 def search(search_string, original_doc, ranker, cfg = 'config.toml'):
     print('Searching...')
     idx = metapy.index.make_inverted_index(cfg)
     print('Done idx...')
-    ranker = metapy.index.OkapiBM25(k1=2.4,b=0.75,k3=400) #metapy.index.JelinekMercer()
+    ranker = metapy.index.OkapiBM25(k1=2.4,b=0.75,k3=400)
     print('Done Bm25...')
     query = metapy.index.Document()
     query.content(search_string.strip())
@@ -90,7 +125,9 @@ def search(search_string, original_doc, ranker, cfg = 'config.toml'):
     clean_dirs('./idx')
     return results
 
-
+'''
+Helper Function to retrieve configuration file for metapy
+'''
 def get_config(cfg = 'config.toml'):
     with open(cfg, 'r') as fin:
         cfg_d = pytoml.load(fin)
