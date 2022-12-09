@@ -5,6 +5,8 @@ A chrome extension that indexes the current page to allow users to search over t
 
 [Usage](#usage)
 
+[Demo Video](https://www.youtube.com/watch?v=agyJ-4IclAc "Demo Video")
+
 # Overview
 
 The objective of this project is to develop a Chrome extension for intelligent browsing. Specifically, we developed a Chrome extension that indexes the current page to allow users to search over the page using the OkapiBM25 ranking function from the metapy package. In addition, we implemented a frontend UI that the users can use to input a search string, and the top 5 results are displayed back to the user.
