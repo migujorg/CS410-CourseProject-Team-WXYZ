@@ -25,8 +25,18 @@ searchButton.addEventListener("click", async () => {
         for(const item of data.search_results) {
             resultsList.innerHTML += "<li>" + item + "</li>";
         }
+        let x = JSON.stringify(data.search_results);
+        console.log(x);
+        chrome.scripting.executeScript({
+          target: { tabId: tab.id },
+          func: elemsContainingText,
+          args: [''+x]
+        },(response) => {
+          console.log(response);
+        });
     });
   });
+  
 });
 
 //Function to fetchData from the backend
@@ -61,4 +71,20 @@ async function fetchData(corpus, search, ranker) {
 // current page to extract the current tabs to text to search
 function searchText() {
   return document.body.innerText;
+}
+
+function elemsContainingText(search_res) {
+  let x = JSON.parse(search_res);
+  console.log('SEARCHCHCHCH');
+  console.log(search_res);
+  let elementList = [...document.querySelectorAll("p,h1,h2,h3,h4,h5,h6")];
+  console.log(elementList);
+  for (let r of search_res){
+    for (let el of elementList) {
+      if (el.innerText.includes(r)) {
+        el.style.backgroundColor="yellow";
+      }
+    }
+  }
+  return 'Done';
 }
