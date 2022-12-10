@@ -107,8 +107,9 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"corpus":"Hello Inteli S
  
 
 ![Browse](./images/browse.png "")
+Items are highlighted once the user clicks on each of the search results. Items are not unhighlighted, however, until page is refreshed. 
 
 
 ### Contribution of Team:
 
-All team members participated in all the  backend and frontend work. Lot of hours were spent on learning the technology and getting up to speed on tasks such as  developing Chrome extensions and developing in Flask-API.
+All team members participated in all the  backend and frontend work. Lot of hours were spent on learning the technology and getting up to speed on tasks such as developing Chrome extensions and developing in Flask-API.

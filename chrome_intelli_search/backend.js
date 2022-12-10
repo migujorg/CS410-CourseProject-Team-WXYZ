@@ -4,7 +4,7 @@ let inputSearch = document.getElementById("search-box-input");
 let resultsContainer = document.getElementById("searchResultsContainer");
 let ranker = document.getElementById("documentTypeDropdown");
 let resultsList = document.getElementById("search-results");
-
+let lastItem = '';
 //Add Click event listener for the search button
 searchButton.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -23,10 +23,23 @@ searchButton.addEventListener("click", async () => {
         resultsList.innerHTML = '';
         //Construct results list
         for(const item of data.search_results) {
-            resultsList.innerHTML += "<li>" + item + "</li>";
+          const li = document.createElement("li");
+          li.innerText = item;
+          li.addEventListener("click", async() => {
+            chrome.scripting.executeScript({
+              target: { tabId: tab.id },
+              func: elemsContainingText,
+              args: [item]
+            });
+          })
+          resultsList.appendChild(li);
         }
+        let x = JSON.stringify(data.search_results);
+        console.log(x);
+        
     });
   });
+  
 });
 
 //Function to fetchData from the backend
@@ -61,4 +74,17 @@ async function fetchData(corpus, search, ranker) {
 // current page to extract the current tabs to text to search
 function searchText() {
   return document.body.innerText;
+}
+
+function elemsContainingText(item) {
+  console.log('item',item);
+  let elementList = [...document.querySelectorAll("p,h1,h2,h3,h4,h5,h6,li,span")];
+  console.log(elementList);
+  for (let el of elementList) {
+    if (el.innerText.includes(item)) {
+      console.log(el);
+      el.style.backgroundColor="yellow";
+    }
+  }
+  return;
 }
