@@ -5,7 +5,7 @@ A chrome extension that indexes the current page to allow users to search over t
 
 [Usage](#usage)
 
-[Demo Video](https://youtu.be/T8iyIf0vZa0 "Demo Video")
+[Demo Video](https://youtu.be/XbMVh-rDk9E "Demo Video")
 
 # Overview
 
