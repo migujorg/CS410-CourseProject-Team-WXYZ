@@ -1,64 +1,192 @@
-Skip to main content
-NFL Shop
-NFL Network
-News Home
-NFL Writers
-Around the NFL
-Kyle Shanahan downplays chances of Jimmy Garoppolo returning for 49ers this season: 'Not real optimistic about it'
-Published: Dec 07, 2022 at 03:54 PM
-Nick Shook
-Around The NFL Writer
-Tuesday's good news regarding Jimmy Garoppolo might not be as positive as initially perceived.
-Garoppolo's foot injury, which will not require surgery, could still prevent him from returning at any point in 2022, head coach Kyle Shanahan said Wednesday.
-"Still going to be a big recovery," Shanahan told reporters. "There's that way outside chance (of a return) late in the playoffs but just an outside chance. Not real optimistic about it but never rule it out."
-Garoppolo avoided ligament damage, leaving open the possibility he could return, depending on how he progresses in rehab. Shanahan sounds as if he's not banking on having Garoppolo available, perhaps guarding his own focus as he prepares his team for the final five weeks of the regular season and a potential playoff run without Garoppolo.
-Top Videos
-Shanahan also told reporters he feels comfortable with the quarterbacks the 49ers have available, confirming this belief by revealing San Francisco did not put in a claim on recently released quarterback Baker Mayfield, who ended up in Los Angeles with the division-rival Rams. Shanahan's squad will proceed with rookie QB Brock Purdy, who impressed in relief duties following Garoppolo's injury in San Francisco's 33-17 win over Miami on Sunday, and well-traveled veteran Josh Johnson.
-Purdy seems to have impressed his teammates as well.
-"You would think he's been in the league 15 years," veteran offensive tackle Trent Williams told NFL Network's Bridget Condon on Wednesday. "If you're talking he'll say shut your a-- up. He ain't no timid rookie feeling his way around. He will get on your a--. You would think he's like Peyton Manning or something."
-It is telling that San Francisco hasn't yet placed Garoppolo on injured reserve. According to the information currently available, it isn't realistic to think Garoppolo will be able to return in the next month, which would render an IR placement moot. The fact he isn't on IR at this point means the 49ers are leaving all avenues open for any possibility.
-After all, Garoppolo's season was essentially finished just 48 hours ago. Now, the 49ers can at least hold out hope he can return eventually, even if it ends up proving unrealistic.
-Related Content
-Sean McVay: Rams 'working through' Baker Mayfield's status for 'Thursday Night Football' vs. Raiders
-Could Baker Mayfield see action Thursday night against the Raiders? Rams head coach Sean McVay told reporters that they're "working through" their new quarterback's status for the game.
-Notre Dame TE Michael Mayer announces he intends to enter 2023 NFL Draft
-Notre Dame tight end Michael Mayer, one of the top prospects in college football, announced on Wednesday that he intends to enter the 2023 NFL Draft.
-Odell Beckham Jr. visit with Cowboys ends with no offer due to concerns over availability in 2022
-The Cowboys originally looked to be very interested in acquiring Odell Beckham Jr. for the remainder of the season, but NFL Network's Jane Slater reported that they did not extend an offer to Beckham at the conclusion of his visit this week.
-Bills pass rusher Von Miller out for season after undergoing surgery to repair ACL tear
-Bills defensive end Von Miller is now out for the season after having surgery to repair his ACL, head coach Sean McDermott announced Wednesday.
-Texans HC Lovie Smith announces Davis Mills will return as starting QB vs. Cowboys in Week 14
-After quarterback Kyle Allen made two starts for the Houston Texans, signal-caller Davis Mills will start against the Dallas Cowboys in Week 14.
-NFL news roundup: Latest league updates from Wednesday, Dec. 7
-NFL.com keeps you up to date with all of the latest league news from around the NFL. Visit NFL.com's transaction hub for a daily breakdown.
-Todd Bowles on Buccaneers' no-huddle offense: 'We can implement it more so'
-Following Monday night's dramatic come-from-behind victory over the Saints, the drumbeat continues to grow in Tampa for more no-huddle offense. Todd Bowles addressed those calls on Tuesday.
-Bengals QB Joe Burrow, Eagles QB Jalen Hurts lead Players of the Week
-Philadelphia quarterback Jalen Hurts and Cincinnati quarterback Joe Burrow highlight the Players of the Week, which were released Wednesday.
-Bill Belichick remains confident in Pats' offensive scheme, staff: 'The system that we have in place, I feel good about'
-New England Patriots head coach Bill Belichick explained why he remained confident in the team's scheme and staff before Monday's game against Arizona.
-Mike Tomlin on rookie WR George Pickens wanting ball more: 'That competitive spirit... I want that guy'
-Pittsburgh Steelers head coach Mike Tomlin shared why he wants a competitive wide receiver like George Pickens on his team ahead of Sunday's Week 14 game against Baltimore.
-Jimmy Garoppolo's foot injury won't require surgery; 49ers QB could return for playoffs
-49ers QB Jimmy Garoppolo's foot injury won't require surgery and the 49ers quarterback may have a chance to return the playoffs if rehab goes smoothly, NFL Network Insider Tom Pelissero reported.
-Single game tickets available now!
-You won't want to miss a moment of the 2022 season!
-BUY NOW
-NFL+ is here!
-NFL+ gives you the freedom to watch LIVE out-of-market preseason games, LIVE local and primetime regular season and postseason games on your phone or tablet, the best NFL programming on-demand, and MORE!
-AFC NORTH
-AFC EAST
-AFC SOUTH
-AFC WEST
-NFC NORTH
-NFC EAST
-NFC SOUTH
-NFC WEST
-GENERAL & MEDIA INFO
-PLAYER SERVICES
-MORE NFL SITES
-Download Apps
-Â© 2022 NFL Enterprises LLC. NFL and the NFL shield design are registered trademarks of the National Football League.The team names, logos and uniform designs are registered trademarks of the teams indicated. All other NFL-related trademarks are trademarks of the National Football League. NFL footage Â© NFL Productions LLC.
-PRIVACY POLICY
-TERMS OF SERVICE
-SUBSCRIPTION TERMS AND CONDITIONS
+Stack Overflow
+For Teams
+Log in
+Sign up
+We do not currently allow content pasted from ChatGPT on Stack Overflow; read our policy here.
+Join Stack Overflow to find the best answer to your technical question, help others answer theirs.
+Sign up with email
+ Sign up with Google
+ Sign up with GitHub
+ Sign up with Facebook
+Explore Collectives
+Stack Overflow for Teams – Start collaborating and sharing organizational knowledge.
+Create a free Team Why Teams?
+How to run Jupyter Notebook with a different version of Python?
+Ask Question
+Asked 2 years, 6 months ago
+Modified 5 months ago
+Viewed 13k times
+I want to be able to run both Python 3.8 (currrent version) and Python 3.7 in my Jupyter Notebook. I understand creating different IPython kernels from virtual environments is the way. So I downloaded Python 3.7 and locally installed it in my home directory. Used this python binary file to create a virtual environment by
+> virtualenv -p ~/Python3.7/bin/python3 py37
+> source py37/bin/activate
+This works perfectly and gives 'Python 3.7' correctly on checking with python --version and sys.version. Then for creating IPython kernel,
+(py37) > ipython kernel install --user --name py37 --display-name "Python 3.7"
+(py37) > jupyter notebook
+This also runs without error and the kernel can be confirmed to be added in the Notebook. However it does not run Python 3.7 like the virtual environment, but Python 3.8 like the default kernel. (confirmed with sys.version)
+I checked ~/.local/share/jupyter/kernels/py37/kernel.json and saw its contents as
+ "argv": [
+ "display_name": "Python 3.7",
+ "language": "python"
+So naturally I tried editing the /usr/bin/python3 to point to my Python 3.7 binary file path that is ~/Python3.7/bin/python3, but then even the kernel doesn't work properly in the notebook.
+What can I possibly do?
+NB: I use Arch Linux, so I installed jupyter, virtualenv, ... through pacman not pip as its recommended in Arch.
+Improve this question
+edited May 23, 2020 at 14:10
+asked May 23, 2020 at 13:25
+1 gold badge
+2 silver badges
+7 bronze badges
+Add a comment
+3 Answers
+Sorted by:
+Highest score (default)
+Trending (recent votes count more)
+Date modified (newest first)
+Date created (oldest first)
+Found it myself, the hard way. Let me share anyway, in case this helps anyone.
+I guess, the problem was that, jupyter notebook installed through pacman searches for python binary files in the PATH variable and not in the path specified by the virtual environment. Since I installed Python 3.7 locally in my home directory, Jupyter can't find it and it might have defaulted to the default python version.
+So the possible solutions are:
+Install Jupyter Notebook through pip (instead of pacman) within the virtual environment set on Python 3.7 (This is not at all recommended for Arch Linux users, as installing packages through pip can probably cause issues in future)
+ > wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz  
+ > tar -xvf Python-3.7.4.tgz    
+ > cd Python-3.5.1/     
+ > ./configure --prefix=$HOME/Python37     
+ > make     
+ > make install   
+ > virtualenv -p ~/Python3.7/bin/python3 py37   
+ > source py37/bin/activate 
+ (py37) > pip install notebook   
+ (py37) > python -m notebook
+Install Python 3.7 within default directory (instead of specifying somewhere else). Create a new IPython kernel using the suitable virtual environment and use jupyter-notebook installed through pacman. (Recommended for Arch Linux users)
+Note 1: > python points to the updated global Python 3.8 version and > python3 or > python3.7 points to newly installed Python 3.7
+Note 2: Once the required kernel is created, you might even be able to use that python version outside the virtual environment.
+ > wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz  
+ > tar -xvf Python-3.7.4.tgz    
+ > cd Python-3.5.1/     
+ > ./configure   
+ > make     
+ > sudo make install   
+ > virtualenv -p $(which python3.7) py37   
+ > source py37/bin/activate 
+ (py37) > ipython kernel install --user --name py37 --display-name "Python 3.7"
+ (py37) > jupyter notebook
+Add the path of the directory where you have locally installed the new Python version to the $PATH variable, create an IPython kernel and run Jupyter Notebook within suitable virtual environment. (Haven't yet tried this one personally. Just felt that this should work. So no guarantee. Also I don't think this is a good solution)
+ > wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz  
+ > tar -xvf Python-3.7.4.tgz    
+ > cd Python-3.5.1/     
+ > ./configure --prefix=$HOME/Python37 
+ > make     
+ > make install   
+ > export PATH="$HOME/Python37/bin:$PATH"          
+ > virtualenv -p  py37   
+ > source py37/bin/activate 
+ (py37) > ipython kernel install --user --name py37 --display-name "Python 3.7"
+ (py37) > jupyter notebook
+Improve this answer
+answered May 24, 2020 at 4:42
+1 gold badge
+2 silver badges
+7 bronze badges
+Add a comment
+Another approach is to just run the notebook application directly using the version of Python you require - provided it's installed for that version of Python (e.g. on a Mac with brew installed version of Python3.8):
+/usr/local/opt/python@3.8/bin/python3 -m notebook
+Also if you want to install packages for that version:
+/usr/local/opt/python@3.8/bin/pip3 install that_package
+Improve this answer
+edited Jan 11, 2021 at 12:19
+answered Nov 6, 2020 at 20:37
+46 silver badges
+58 bronze badges
+Add a comment
+in the official jupyter dcoumentation, there is a description now to do it, when customizing jupyter stacks. I think the mamba command will solve the problem. The commands starting with RUN can also just executed on a linux system.
+# Choose your desired base image
+FROM jupyter/minimal-notebook:latest
+# name your environment and choose the python version
+ARG conda_env=python37
+ARG py_ver=3.7
+# you can add additional libraries you want mamba to install by listing them below the first line and ending with "&& \"
+RUN mamba create --quiet --yes -p "${CONDA_DIR}/envs/${conda_env}" python=${py_ver} ipython ipykernel && \
+    mamba clean --all -f -y
+# alternatively, you can comment out the lines above and uncomment those below
+# if you'd prefer to use a YAML file present in the docker build context
+# COPY --chown=${NB_UID}:${NB_GID} environment.yml "/home/${NB_USER}/tmp/"
+# RUN cd "/home/${NB_USER}/tmp/" && \
+#     mamba env create -p "${CONDA_DIR}/envs/${conda_env}" -f environment.yml && \
+#     mamba clean --all -f -y
+# create Python kernel and link it to jupyter
+RUN "${CONDA_DIR}/envs/${conda_env}/bin/python" -m ipykernel install --user --name="${conda_env}" && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
+# any additional pip installs can be added by uncommenting the following line
+# RUN "${CONDA_DIR}/envs/${conda_env}/bin/pip" install --quiet --no-cache-dir
+# if you want this environment to be the default one, uncomment the following line:
+# RUN echo "conda activate ${conda_env}" >> "${HOME}/.bashrc"
+Hope this helps
+Improve this answer
+answered Jul 11 at 15:05
+4 bronze badges
+Add a comment
+Your Answer
+Sign up or log in
+ Sign up using Google
+ Sign up using Facebook
+ Sign up using Email and Password
+Post as a guest
+Required, but never shown
+Post Your Answer
+By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged pythonlinuxjupyter-notebookjupyterarchlinux or ask your own question.
+The Overflow Blog
+How to make time for learning in tech
+sponsored post
+Ready to optimize your JavaScript with Rust?
+Featured on Meta
+Help us identify new roles for community members
+Navigation and UI research starting soon
+Temporary policy: ChatGPT is banned
+Is there a way to run Python on Android?
+Use different Python version with virtualenv
+How do I concatenate two lists in Python?
+How to upgrade all Python packages with pip?
+How do I access environment variables in Python?
+How do I delete a file or folder in Python?
+Link Conda environment with Jupyter Notebook
+Conda environments not showing up in Jupyter Notebook
+change python version in jupyter notebook
+Hot Network Questions
+Magnetic Field 'Above' a straight wire
+How to calculate the individual atomic charge from a cube file of charge density?
+Aligning a very long ordered pair
+What happens if you score more than 99 points in volleyball?
+CGAC2022 Day 8: Fen The Wicked, Part 2
+Does any country consider housing and food a right?
+DAW sounds and sound quality
+What type of insulation is this and should it be replaced?
+Debian/Ubuntu - Is there a man page listing all the version codenames/numbers?
+Under what conditions do airplanes stall?
+How to label jars so the label comes off easily?
+When would I give a checkpoint to my D&D party that they can return to if they die?
+What is this fallacy: Perfection is impossible, therefore imperfection should be overlooked
+How to negotiate a raise, if they want me to get an offer letter?
+The trajectory of the particle with E=(0,0,E) and B=(B,0,0)
+Is NYC taxi cab number 86Z5 reserved for filming?
+What are these row of bumps along my drywall near the ceiling?
+What is the bulge on the back of my Smeg refrigerator?
+Less than half vs fewer than one third
+Would multiclassing from a full caster into a lesser caster mean you are no longer a full caster?
+1980s short story - disease of self absorption
+Which random generator does /dev/urandom use (LTS 20.04)
+How to speed up julia script launch time
+Can a GFCI have no ground?
+ Question feed
+STACK OVERFLOW
+Work Here
+Privacy Policy
+Terms of Service
+Contact Us
+Cookie Settings
+Cookie Policy
+STACK EXCHANGE NETWORK
+Culture & recreation
+Life & arts
+Site design / logo © 2022 Stack Exchange Inc; user contributions licensed under CC BY-SA. rev 2022.12.9.43105
